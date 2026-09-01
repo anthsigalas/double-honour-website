@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Contact Double Honour to discuss church property funding, manse finance and property acquisition support.">
+  <title>Contact Double Honour | Church Property Finance</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header on-light">
+    <div class="shell header-inner">
+      <a class="brand" href="index.html" aria-label="Double Honour home"><img class="brand-mark" src="assets/double-honour-dark.png" alt="Double Honour"></a>
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="how-we-help.html">How we can help</a>
+        <a href="about.html">About us</a>
+        <a href="faq.html">FAQs</a>
+      </nav>
+      <a class="button button-small desktop-contact" href="contact.html">Contact us</a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open navigation"><span></span><span></span><span></span></button>
+    </div>
+    <div class="mobile-menu" id="mobile-menu" hidden>
+      <nav aria-label="Mobile navigation">
+        <a href="index.html">Home</a>
+        <a href="how-we-help.html">How we can help</a>
+        <a href="about.html">About us</a>
+        <a href="faq.html">FAQs</a>
+        <a href="contact.html">Contact us</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <section class="contact-page">
+      <div class="shell contact-page-grid">
+        <div class="contact-intro">
+          <p class="eyebrow">Contact us</p>
+          <h1>Start with your church's circumstances</h1>
+          <p>Every church is different. Tell us what you are considering, where your funding currently stands and the type of property you are looking for. Double Honour can then explore whether and how we may be able to help.</p>
+          <div class="contact-direct"><span>Prefer email?</span><a href="mailto:info@housingaffordability.co">info@housingaffordability.co</a></div>
+        </div>
+
+        <form class="contact-form" action="https://formsubmit.co/info@housingaffordability.co" method="POST">
+          <input type="hidden" name="_subject" value="New Double Honour website enquiry">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://www.housingaffordability.co/thanks.html">
+          <div class="honeypot" aria-hidden="true"><label>Leave this field empty<input type="text" name="_honey" tabindex="-1" autocomplete="off"></label></div>
+          <div class="form-row">
+            <div class="form-field"><label for="name">Your name</label><input id="name" name="name" type="text" autocomplete="name" required></div>
+            <div class="form-field"><label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+          </div>
+          <div class="form-row">
+            <div class="form-field"><label for="organisation">Church / organisation</label><input id="organisation" name="organisation" type="text" autocomplete="organization" required></div>
+            <div class="form-field"><label for="phone">Phone number <span aria-hidden="true">(optional)</span></label><input id="phone" name="phone" type="tel" autocomplete="tel"></div>
+          </div>
+          <div class="form-field"><label for="enquiry">What can we help with?</label><select id="enquiry" name="enquiry_type" required><option value="" selected disabled>Select an option</option><option>Buying a home for a minister</option><option>Church network / denomination property strategy</option><option>Funding gap / financing</option><option>Property search and acquisition support</option><option>General enquiry</option></select></div>
+          <div class="form-field"><label for="message">Tell us a little about your situation</label><textarea id="message" name="message" required placeholder="For example: where you are looking, whether you have identified a property, your current savings / fundraising position and any bank funding already discussed."></textarea></div>
+          <label class="form-consent"><input type="checkbox" name="consent" value="Yes" required><span>I agree that Double Honour may use the information I provide to respond to this enquiry.</span></label>
+          <button class="button" type="submit">Send enquiry</button>
+          <p class="form-note">This form is configured to forward submissions to info@housingaffordability.co. The form service must be activated from that inbox on first use.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="shell footer-top">
+      <div class="footer-brand">
+        <img class="footer-brand-mark" src="assets/double-honour-light.png" alt="Double Honour">
+        <p>Helping churches and church networks purchase property sooner.</p>
+        <a class="footer-contact" href="mailto:info@housingaffordability.co">info@housingaffordability.co</a>
+      </div>
+      <div class="footer-links">
+        <a href="how-we-help.html">How we can help</a>
+        <a href="about.html">About us</a>
+        <a href="faq.html">FAQs</a>
+        <a href="contact.html">Contact us</a>
+      </div>
+    </div>
+    <div class="shell footer-bottom">
+      <span>© <span data-year></span> Double Honour</span>
+      <div class="footer-legal">
+        <a href="cookie-policy.html">Cookie Policy</a>
+        <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
