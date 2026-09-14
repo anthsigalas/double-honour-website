@@ -75,9 +75,9 @@ button, input, select, textarea { font: inherit; }
 
 .hero { position: relative; min-height: 680px; display: flex; align-items: flex-end; color: var(--cream); overflow: hidden; }
 .hero-image { position: absolute; inset: 0; background: url('assets/hero.jpeg') center 43%/cover no-repeat; transform: scale(1.01); }
-.hero-shade { position: absolute; inset: 0; background: rgba(43, 26, 16, .18); }
+.hero-shade { position: absolute; inset: 0; background: rgba(43, 26, 16, .25); }
 .hero-content { position: relative; padding-bottom: 82px; }
-.hero h1 { max-width: 850px; margin: 8px 0 0; font-size: clamp(44px, 6vw, 82px); line-height: 1.02; letter-spacing: -.045em; }
+.hero h1 { max-width: 850px; margin: 8px 0 0; color: #FFFDF9; font-size: clamp(44px, 6vw, 82px); line-height: 1.02; letter-spacing: -.045em; text-shadow: 0 3px 22px rgba(43,26,16,.38); }
 
 .inner-hero { position: relative; min-height: 490px; display: flex; align-items: flex-end; color: var(--cream); overflow: hidden; background: var(--brown); }
 .inner-hero-image { position: absolute; inset: 0; background-position: center; background-size: cover; transform: scale(1.01); }
@@ -114,6 +114,7 @@ button, input, select, textarea { font: inherit; }
 .support-card h3 { min-height: 2.32em; }
 .support-card-purpose { margin: 0 0 12px; color: var(--gold) !important; font-size: 12px; font-weight: 700; line-height: 1.35; text-transform: uppercase; letter-spacing: .14em; }
 .support-card p { color: var(--muted); }
+.support-card-body > p:not(.support-card-purpose) { font-size: 18px; line-height: 1.65; }
 
 .help-section { padding-block: 88px; background: var(--paper); }
 .help-heading { margin-bottom: 38px; }
@@ -365,4 +366,803 @@ button, input, select, textarea { font: inherit; }
 @media (max-width: 720px) {
   .legal-content h2 { margin-top: 34px; font-size: 22px; }
   .legal-content .legal-lead { font-size: 17px; }
+}
+
+/* v16 — Our service page */
+.service-hero .inner-hero-content { max-width: 980px; }
+.service-hero h1 { max-width: 940px; font-size: clamp(40px, 5.2vw, 68px); }
+.service-hero .inner-hero-content > p:last-child { max-width: 780px; }
+
+.service-section-heading { max-width: 920px; }
+.service-section-heading h2 { max-width: 860px; }
+.compact-heading { margin-bottom: 28px; }
+
+.service-pressure-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.service-pressure-card {
+  position: relative;
+  min-height: 300px;
+  padding: 36px 38px 34px;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: var(--white);
+  box-shadow: 0 14px 38px rgba(43,26,16,.06);
+  overflow: hidden;
+}
+.service-pressure-card::after {
+  content: "";
+  position: absolute;
+  inset: auto -70px -85px auto;
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  background: rgba(197,155,82,.08);
+}
+.service-card-number {
+  display: inline-flex;
+  margin-bottom: 22px;
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .14em;
+}
+.service-pressure-card h3 { margin: 0 0 18px; color: var(--gold); font-size: 27px; line-height: 1.2; }
+.service-pressure-card ul,
+.service-challenge-card ul,
+.service-support-card ul { margin: 0; padding-left: 21px; }
+.service-pressure-card li,
+.service-support-card li { color: var(--muted); font-size: 16px; line-height: 1.6; }
+.service-pressure-card li + li,
+.service-support-card li + li { margin-top: 12px; }
+
+.service-challenge-section { background: var(--white); }
+.service-challenge-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.service-challenge-card {
+  position: relative;
+  min-height: 430px;
+  overflow: hidden;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  isolation: isolate;
+}
+.service-challenge-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.service-challenge-card.individual img { object-position: center 46%; }
+.service-challenge-card.network img { object-position: center 48%; filter: saturate(.88) contrast(1.03); }
+.service-challenge-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(43,26,16,.12) 5%, rgba(43,26,16,.86) 88%);
+  z-index: 1;
+}
+.service-challenge-content {
+  position: absolute;
+  inset: auto 0 0;
+  z-index: 2;
+  padding: 34px 36px 36px;
+  color: var(--cream);
+}
+.service-challenge-content h2 { margin: 0 0 14px; color: #fffdf9; font-size: clamp(28px, 3vw, 40px); line-height: 1.12; letter-spacing: -.025em; }
+.service-challenge-content ul { max-width: 540px; }
+.service-challenge-content li { color: rgba(255,255,255,.88); font-size: 16px; line-height: 1.55; }
+.service-challenge-content li + li { margin-top: 9px; }
+
+.service-funding-layout { align-items: start; }
+.service-funding-layout h2 { max-width: 520px; }
+.service-funding-layout .funding-schematic { margin-top: 2px; }
+
+.legal-complexity-panel {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 34px;
+  align-items: stretch;
+  margin-top: 34px;
+  padding: 30px 34px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--white);
+  box-shadow: 0 12px 32px rgba(43,26,16,.05);
+}
+.legal-complexity-label {
+  display: flex;
+  align-items: center;
+  padding-right: 30px;
+  border-right: 1px solid var(--line);
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+.legal-complexity-copy h3 { margin: 0 0 14px; font-size: 28px; line-height: 1.2; }
+.legal-complexity-points { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 24px; }
+.legal-complexity-points p {
+  position: relative;
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.6;
+}
+.legal-complexity-points p::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: .72em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+
+.service-solution-section { padding-block: 90px; background: var(--brown); color: var(--cream); }
+.service-solution-heading { max-width: 1060px; margin-bottom: 38px; }
+.service-solution-heading h2 {
+  max-width: 1010px;
+  margin: 0;
+  color: var(--cream);
+  font-size: clamp(30px, 3.55vw, 46px);
+  line-height: 1.2;
+  letter-spacing: -.028em;
+  font-weight: 600;
+}
+.service-support-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 24px; align-items: stretch; }
+.service-support-card {
+  padding: 34px 36px 36px;
+  border-radius: var(--radius);
+  background: var(--white);
+  color: var(--ink);
+  box-shadow: 0 16px 42px rgba(0,0,0,.12);
+}
+.service-support-card.network-support { background: var(--cream); }
+.service-support-card .card-kicker {
+  margin-bottom: 18px;
+  color: var(--gold);
+  font-size: 13px;
+}
+.service-support-card li { color: rgba(43,26,16,.76); }
+.service-commitment {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 28px;
+  align-items: center;
+  margin-top: 24px;
+  padding: 24px 28px;
+  border: 1px solid rgba(197,155,82,.35);
+  border-radius: 18px;
+  background: rgba(255,255,255,.06);
+}
+.service-commitment span {
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+.service-commitment p { margin: 0; color: rgba(255,255,255,.78); font-size: 16px; line-height: 1.6; }
+
+@media (max-width: 980px) {
+  .service-pressure-grid,
+  .service-challenge-grid,
+  .service-support-grid { grid-template-columns: 1fr; }
+  .service-challenge-card { min-height: 390px; }
+  .legal-complexity-panel { grid-template-columns: 1fr; gap: 18px; }
+  .legal-complexity-label { padding-right: 0; padding-bottom: 12px; border-right: 0; border-bottom: 1px solid var(--line); }
+  .service-commitment { grid-template-columns: 1fr; gap: 10px; }
+}
+
+@media (max-width: 720px) {
+  .service-pressure-card { min-height: auto; padding: 28px; }
+  .service-challenge-card { min-height: 420px; }
+  .service-challenge-content { padding: 26px; }
+  .service-challenge-content li { font-size: 15px; }
+  .legal-complexity-panel { padding: 26px; }
+  .legal-complexity-points { grid-template-columns: 1fr; gap: 14px; }
+  .service-solution-section { padding-block: 64px; }
+  .service-support-card { padding: 28px; }
+  .service-commitment { padding: 22px; }
+}
+
+
+/* v17 — refinements based on 11 Sep feedback; source base: v16 */
+
+/* Home hero: keep the desktop tagline on one line while retaining mobile wrapping. */
+@media (min-width: 981px) {
+  .hero-content { width: min(calc(100% - 48px), 1540px); }
+  .hero h1 {
+    max-width: none;
+    white-space: nowrap;
+    font-size: clamp(44px, 4.3vw, 78px);
+  }
+}
+
+/* Home Our service: five equal rows, with the whole right side matching the funding card height. */
+.journey-panel {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+.journey-list {
+  display: grid;
+  grid-template-rows: repeat(5, minmax(0, 1fr));
+  flex: 1 1 auto;
+}
+.journey-list li {
+  min-height: 0;
+  padding: 14px 0;
+}
+
+/* Page hero titles use the same cleaner white as the Home hero. */
+.inner-hero h1,
+.faq-hero h1 {
+  color: #FFFDF9;
+}
+
+/* 01 — Status quo: remove numbering / corner circles and connect the two pressures with a subtle ampersand. */
+.service-pressure-grid {
+  position: relative;
+  isolation: isolate;
+}
+.service-pressure-grid::before {
+  content: "&";
+  position: absolute;
+  left: 50%;
+  top: 51%;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+  font-size: clamp(150px, 15vw, 232px);
+  font-weight: 600;
+  line-height: .8;
+  letter-spacing: -.08em;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    rgba(43,26,16,.075) 0%,
+    rgba(43,26,16,.075) 43%,
+    rgba(197,155,82,.34) 47%,
+    rgba(197,155,82,.34) 53%,
+    rgba(43,26,16,.075) 57%,
+    rgba(43,26,16,.075) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.service-pressure-card::after { display: none; }
+.service-pressure-card > * { position: relative; z-index: 3; }
+.service-pressure-card h3 { margin-top: 2px; }
+.service-card-number { display: none; }
+
+/* 02 — Challenge: mirror the Home client-card language; high-resolution imagery above copy. */
+.service-challenge-grid { align-items: stretch; }
+.service-challenge-card {
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--white);
+  box-shadow: 0 10px 34px rgba(43,26,16,.06);
+  isolation: auto;
+}
+.service-challenge-media {
+  position: relative;
+  height: 286px;
+  overflow: hidden;
+  background: var(--paper);
+}
+.service-challenge-media img {
+  position: static;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: none;
+}
+.service-challenge-card.individual .service-challenge-media img { object-position: center 52%; }
+.service-challenge-card.network .service-challenge-media img { object-position: center 46%; }
+.service-challenge-shade { display: none; }
+.service-challenge-content {
+  position: static;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  padding: 32px 34px 34px;
+  color: var(--ink);
+}
+.service-challenge-content h2 {
+  min-height: 2.24em;
+  margin: 0 0 16px;
+  color: var(--ink);
+  font-size: clamp(27px, 3vw, 40px);
+  line-height: 1.12;
+  letter-spacing: -.025em;
+}
+.service-challenge-content ul { max-width: none; }
+.service-challenge-content li {
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.6;
+}
+.service-challenge-content li + li { margin-top: 10px; }
+.challenge-cracks {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.challenge-cracks path {
+  fill: none;
+  stroke: rgba(73,44,25,.62);
+  stroke-width: .38;
+  vector-effect: non-scaling-stroke;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 1px 0 rgba(255,255,255,.22));
+}
+
+/* 03 — Funding gap: bottom-align the schematic with the title block and vertically centre its contents. */
+.service-funding-layout { align-items: end; }
+.service-funding-layout .funding-schematic {
+  align-self: end;
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Legal complexity: no secondary label; typography follows the funding schematic above. */
+.legal-complexity-panel {
+  display: block;
+  padding: 30px 34px;
+}
+.legal-complexity-label { display: none; }
+.legal-complexity-copy h3 { color: var(--ink); }
+.legal-complexity-points p { color: var(--muted); }
+
+/* 04 — How we can help: use available width, equal cards and consistent client headings. */
+.service-solution-heading {
+  max-width: none;
+  margin-right: 0;
+}
+.service-solution-heading h2 {
+  max-width: 1180px;
+}
+.service-support-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.service-support-card {
+  height: 100%;
+}
+.service-support-card .client-type-title {
+  min-height: 2.32em;
+  margin: 0 0 20px;
+  color: var(--ink);
+  font-size: clamp(27px, 3vw, 40px);
+  line-height: 1.16;
+  letter-spacing: -.025em;
+}
+
+@media (max-width: 980px) {
+  .journey-list { display: block; }
+  .service-pressure-grid::before { display: none; }
+  .service-challenge-content h2,
+  .service-support-card .client-type-title { min-height: 0; }
+  .service-support-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 720px) {
+  .hero h1 { white-space: normal; }
+  .service-challenge-media { height: 230px; }
+  .service-challenge-content { padding: 28px; }
+}
+/* The service funding title has no body copy below it, so remove the generic trailing margin for true bottom alignment. */
+.service-funding-layout h2 { margin-bottom: 0; }
+
+
+/* v18 — current round of fixes */
+/* Home hero headline centred horizontally. */
+.hero-content {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.hero h1 {
+  max-width: 1600px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Remove the oversized ampersand while keeping the cleaner card treatment. */
+.service-pressure-grid::before {
+  display: none !important;
+}
+
+/* New challenge images: slightly tune crop positions for the new assets. */
+.service-challenge-card.individual .service-challenge-media img {
+  object-position: center 56%;
+}
+.service-challenge-card.network .service-challenge-media img {
+  object-position: center 42%;
+}
+
+@media (max-width: 720px) {
+  .hero-content {
+    justify-content: center;
+    text-align: center;
+  }
+  .hero h1 {
+    max-width: 100%;
+  }
+}
+
+
+/* v19 — footer navigation and About page refinements */
+.footer-top {
+  grid-template-columns: minmax(300px, 1fr) auto;
+  align-items: center;
+  gap: 72px;
+}
+.footer-links {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 34px;
+  padding-top: 0;
+  font-size: 14px;
+}
+.footer-links a {
+  white-space: nowrap;
+}
+.team-bullets {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.58;
+}
+.team-bullets li + li {
+  margin-top: 10px;
+}
+
+@media (max-width: 980px) {
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .footer-links {
+    justify-content: flex-start;
+    padding-top: 0;
+    flex-wrap: wrap;
+    gap: 16px 28px;
+  }
+}
+
+@media (max-width: 720px) {
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .team-bullets {
+    font-size: 14px;
+  }
+}
+
+
+/* v20 — About page refinements */
+/* Make the values numbering more legible without competing with the card titles. */
+.value-card span {
+  font-size: 15px;
+}
+
+/* Alternate section backgrounds so Our values and Team read as separate sections. */
+.team-section {
+  background: var(--cream);
+}
+
+
+/* v21 — About page section alternation and compact horizontal team profiles */
+/* About page sequence now alternates: Values (paper) → Team (cream) → Contact (paper). */
+.about-contact-section {
+  background: var(--paper);
+}
+
+/* Team members read as compact horizontal profiles rather than oversized portrait cards. */
+.team-grid {
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+.team-card {
+  display: grid;
+  grid-template-columns: 210px minmax(0, 1fr);
+  align-items: start;
+  overflow: hidden;
+}
+.team-photo {
+  width: 166px;
+  height: 208px;
+  aspect-ratio: auto;
+  margin: 26px 0 26px 26px;
+  border-radius: 14px;
+  object-fit: cover;
+  object-position: center top;
+}
+.team-body {
+  padding: 27px 32px 30px 0;
+}
+.team-body h4 {
+  font-size: 25px;
+}
+.team-role {
+  margin: 5px 0 15px;
+}
+.team-bullets {
+  max-width: 930px;
+}
+
+@media (max-width: 980px) {
+  .team-card {
+    grid-template-columns: 180px minmax(0, 1fr);
+  }
+  .team-photo {
+    width: 142px;
+    height: 178px;
+    margin: 24px 0 24px 24px;
+  }
+  .team-body {
+    padding: 24px 26px 26px 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .team-card {
+    grid-template-columns: 1fr;
+  }
+  .team-photo {
+    width: 148px;
+    height: 186px;
+    margin: 24px 24px 0;
+  }
+  .team-body {
+    padding: 22px 24px 26px;
+  }
+}
+
+
+/* v22 — return the team section to a compact 3 + 3 grid with smaller portraits. */
+.team-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  align-items: start;
+}
+.team-card {
+  display: flex;
+  flex-direction: column;
+  padding: 22px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 0 10px 32px rgba(43,26,16,.05);
+}
+.team-card-header {
+  display: grid;
+  grid-template-columns: 132px minmax(0, 1fr);
+  gap: 18px;
+  align-items: center;
+}
+.team-photo,
+.team-placeholder {
+  width: 132px;
+  height: 164px;
+  aspect-ratio: auto;
+  margin: 0;
+  border-radius: 14px;
+}
+.team-photo {
+  object-fit: cover;
+  object-position: center top;
+}
+.team-placeholder {
+  display: grid;
+  place-items: center;
+  font-size: 42px;
+}
+.team-intro h4,
+.team-body h4 {
+  margin: 0;
+  font-size: 24px;
+  line-height: 1.15;
+}
+.team-intro .team-role,
+.team-body .team-role {
+  margin: 6px 0 0;
+}
+.team-body {
+  padding: 18px 0 0;
+}
+.team-body p:last-child {
+  margin: 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.62;
+}
+.team-bullets {
+  margin: 0;
+  padding-left: 18px;
+  max-width: none;
+}
+.team-bullets li {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.58;
+}
+
+@media (max-width: 1100px) {
+  .team-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+  .team-card {
+    padding: 20px;
+  }
+  .team-card-header {
+    grid-template-columns: 116px minmax(0, 1fr);
+    gap: 16px;
+  }
+  .team-photo,
+  .team-placeholder {
+    width: 116px;
+    height: 146px;
+  }
+  .team-intro h4 {
+    font-size: 22px;
+  }
+  .team-body {
+    padding-top: 16px;
+  }
+}
+
+/* v23 — keep all profile cards within each 3-person team row the same height. */
+.team-grid {
+  align-items: stretch;
+}
+.team-card {
+  height: 100%;
+}
+
+
+/* v25 — footer company / regulatory notices and Evangeline portrait */
+.footer-notices {
+  margin-top: 22px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(197,155,82,.18);
+  color: rgba(255,255,255,.46);
+  font-size: 11px;
+  line-height: 1.55;
+}
+.footer-notices p {
+  max-width: 1180px;
+  margin: 0;
+}
+.footer-notices p + p {
+  margin-top: 8px;
+}
+.thanks-legal-footer {
+  background: var(--brown);
+  color: var(--cream);
+  padding: 0 0 26px;
+}
+.thanks-legal-footer .footer-notices {
+  margin-top: 0;
+}
+
+@media (max-width: 720px) {
+  .footer-notices {
+    font-size: 10.5px;
+  }
+}
+
+
+/* v26 — Contact form eligibility questions */
+.form-question {
+  margin: 0 0 18px;
+  padding: 18px 20px;
+  border: 1px solid rgba(43,26,16,.16);
+  border-radius: 12px;
+  background: #FFF9F0;
+}
+fieldset.form-question { min-width: 0; }
+.form-question legend {
+  width: 100%;
+  padding: 0;
+  margin: 0 0 13px;
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+.form-check {
+  display: grid;
+  grid-template-columns: 18px 1fr;
+  gap: 10px;
+  align-items: start;
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.5;
+  cursor: pointer;
+}
+.form-check input,
+.form-options input {
+  width: auto !important;
+  margin: 3px 0 0;
+  padding: 0;
+  accent-color: var(--gold);
+}
+.form-check a {
+  color: var(--gold);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.form-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.form-options label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 38px;
+  padding: 0 13px;
+  border: 1px solid rgba(43,26,16,.16);
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.form-options label:has(input:checked) {
+  border-color: var(--gold);
+  color: var(--brown);
+  background: rgba(197,155,82,.11);
+}
+
+
+/* v27 — Contact form required-field markers */
+.required-note {
+  margin: 0 0 18px;
+  color: var(--muted);
+  font-size: 12px;
+}
+.required-mark {
+  color: var(--gold);
+  font-weight: 700;
+}
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+
+/* v28 — prevent multi-line Contact form questions from colliding with card borders */
+.form-question-title {
+  margin: 0 0 13px;
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.5;
 }

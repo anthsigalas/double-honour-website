@@ -73,3 +73,32 @@ Update v13:
 Update v14:
 - Aligned the full 01 — The Challenge subsection to the same 1220px content width/margins used by sections 02 and 03.
 - Kept the four challenge cards in one horizontal row on desktop while slightly reducing card padding, gaps and typography so they fit cleanly within the narrower content width.
+
+
+Update v15:
+- Home hero tagline changed to ‘Financing Churches · Housing Ministers’; text contrast improved with a lighter headline, slightly stronger image shade and subtle text shadow.
+- Homepage experience metric shortened to ‘Combined experience across finance and real estate’.
+- Removed the homepage ‘Learn how it works’ button.
+- Updated the Individual churches description and increased both support-card description sizes.
+- Replaced the Church networks & denominations family image with the church-and-community photograph.
+- Homepage How we can help journey reduced to five steps, removing fundraising advice and updating the property assessment, buyer strength/negotiation and legal/completion wording.
+
+v16 — Our service page update
+- Renamed the visible “How we can help” page/navigation label to “Our service” across the site.
+- Added `our-service.html` as the canonical service page; retained `how-we-help.html` as a redirect so old/shared links continue to work.
+- Removed the hero eyebrow and replaced the service-page hero copy with the new church/network ownership messaging.
+- Rebuilt Section 01 as “Status quo” with separate Financial strain and Ministry strain panels.
+- Rebuilt Section 02 as “The challenge” with two photo-led overlay cards for Individual churches and Church networks & denominations.
+- Reworked Section 03 funding-gap section: updated left-hand statement, renamed Uses to Property value, removed 100%, and added a full-width Legal complexity panel.
+- Rebuilt Section 04 with the new financial-strategy/flexible-loans statement, dedicated Individual churches and Church networks & denominations support panels, and a full-width long-term commitment statement.
+- Kept the Start a conversation section unchanged.
+
+
+Version v25: updated homepage KPIs, FAQs, footer company/regulatory notices, and Evangeline Cheung portrait.
+
+Version v26:
+- Homepage KPI middle figure simplified to “22” while retaining “Churches supported across the UK” below.
+- Removed the Home-page “Check eligibility” button.
+- Standardised every browser tab title to “Double Honour”.
+- Added required Contact form eligibility gates for Evangelical Alliance Statement of Faith endorsement and UK location.
+- Added required Yes / No / Don't know fields for minimum deposit / stable congregation and experienced project-leader questions.
