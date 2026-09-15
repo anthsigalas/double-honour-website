@@ -102,3 +102,22 @@ Version v26:
 - Standardised every browser tab title to “Double Honour”.
 - Added required Contact form eligibility gates for Evangelical Alliance Statement of Faith endorsement and UK location.
 - Added required Yes / No / Don't know fields for minimum deposit / stable congregation and experienced project-leader questions.
+
+
+Version v30 — 15 Sep 2026:
+- Home: added “~” before £17m; introduced desktop-only line breaks in the impact statement and selected journey steps; reduced support/service body copy sizing; replaced the Church networks & denominations image with the approved unbroken connected map.
+- Footer: converted the Contact us navigation link to the same pill-button treatment used in the page header across all pages with a footer.
+- Our service / Status quo: added subdued challenge imagery behind the two strain panels for a more visual treatment.
+- Our service / The challenge: replaced the network challenge image with the approved cracked-map asset.
+- Our service / How we can help: added the approved flourishing individual-church and network images to the two support cards.
+- Our service / Funding gap: removed the Legal complexity box, stacked its bullets vertically, and retained readable dark typography with gold bullets.
+- Our service / commitment: removed the “Our commitment” label and surrounding box; elevated the commitment statement to large section-level typography.
+- Our service: replaced the generic bottom contact heading with service-specific wording.
+- About: added desktop-only hero line breaks; changed “the Church” to “your church”; widened Values and Team heading/copy blocks to the full three-card width; removed the Investment Committee descriptor.
+- Mobile behaviour preserved: desktop-forced line breaks are disabled at phone widths.
+
+Version v31 — 15 Sep 2026:
+- Our service / Status quo: removed the reused transparent challenge imagery and replaced it with a single restrained code-drawn compression/strain motif spanning both pressure cards.
+- Our service / Funding gap: changed the Legal complexity bullets from gold to Double Honour brown.
+- About: forced the desktop hero to the intended three lines — “We are a Christian company” / “helping churches buy homes” / “for their ministers” — while preserving natural mobile wrapping.
+

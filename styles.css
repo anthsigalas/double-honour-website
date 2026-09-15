@@ -1166,3 +1166,248 @@ fieldset.form-question { min-width: 0; }
   font-weight: 700;
   line-height: 1.5;
 }
+
+
+/* v30 — 15 Sep 2026 refinements */
+/* Desktop-directed line breaks disappear on phone layouts. */
+.desktop-br { display: inline; }
+
+/* Home: tighter descriptive typography across client cards and Our service. */
+.support-card-body > p:not(.support-card-purpose),
+.funding-panel p:not(.card-kicker),
+.journey-intro,
+.journey-list p {
+  font-size: 16px;
+}
+.journey-intro { line-height: 1.55; }
+.journey-list p { line-height: 1.55; }
+
+/* Home map asset: preserve the complete composition within the card crop. */
+.support-card img[src$="map-normal.png"] {
+  object-position: center center;
+}
+
+/* Status quo: introduce a subdued visual cue of strain behind the copy. */
+#status-quo .service-pressure-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  opacity: .075;
+  filter: grayscale(1) contrast(1.08);
+  pointer-events: none;
+}
+#status-quo .service-pressure-card:first-child::before {
+  background-image: url('assets/individual-church-challenge-v18.png');
+}
+#status-quo .service-pressure-card:nth-child(2)::before {
+  background-image: url('assets/map-break.png');
+}
+#status-quo .service-pressure-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Challenge: use the supplied broken-map asset without additional crack overlays. */
+.service-challenge-card.network .service-challenge-media img {
+  object-position: center center;
+  filter: none;
+}
+.challenge-cracks { display: none !important; }
+
+/* Funding gap / legal complexity: open layout, stacked points and matching bullets. */
+.legal-complexity-panel {
+  display: block;
+  margin-top: 38px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+.legal-complexity-copy h3 {
+  margin: 0 0 16px;
+  color: var(--ink);
+}
+.legal-complexity-points {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  max-width: 900px;
+}
+.legal-complexity-points p {
+  color: var(--muted);
+  font-size: 15px;
+}
+.legal-complexity-points p::before {
+  background: var(--gold);
+}
+
+/* How we can help: image-led cards matching the site's existing card language. */
+.service-support-card {
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.service-support-media {
+  height: 286px;
+  overflow: hidden;
+  background: var(--paper);
+}
+.service-support-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.service-support-body {
+  padding: 32px 34px 36px;
+}
+.service-support-body ul { margin-bottom: 0; }
+
+/* Commitment is intentionally unboxed and reads as a second section statement. */
+.service-commitment {
+  display: block;
+  margin-top: 42px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+.service-commitment p {
+  max-width: 1180px;
+  margin: 0;
+  color: var(--cream);
+  font-size: clamp(30px, 3.55vw, 46px);
+  line-height: 1.2;
+  letter-spacing: -.028em;
+  font-weight: 600;
+}
+
+/* About: headings/copy span the same full shell width as the 3-card grids. */
+.about-wide-heading {
+  max-width: none;
+  width: 100%;
+}
+.about-wide-heading h2,
+.about-wide-heading p:not(.eyebrow) {
+  max-width: none;
+}
+
+/* Footer CTA: same pill language as the top-page Contact us button. */
+.footer-links .footer-contact-button {
+  min-height: 42px;
+  padding-inline: 20px;
+  color: var(--cream);
+  background: rgba(255,255,255,.14);
+  border: 1px solid rgba(255,255,255,.55);
+  box-shadow: none;
+}
+.footer-links .footer-contact-button:hover {
+  background: var(--cream);
+  color: var(--brown);
+}
+
+@media (max-width: 720px) {
+  .desktop-br { display: none; }
+  .service-support-media { height: 230px; }
+  .service-support-body { padding: 28px; }
+  #status-quo .service-pressure-card::before { opacity: .055; }
+}
+
+/* v31 — 15 Sep 2026 refinements */
+/* Status quo: replace reused photography with one restrained, code-drawn compression/strain motif spanning both cards. */
+#status-quo .service-pressure-grid {
+  position: relative;
+  isolation: isolate;
+}
+#status-quo .service-pressure-card {
+  z-index: 1;
+  background: rgba(255,253,249,.94);
+}
+#status-quo .service-pressure-card::before {
+  display: none !important;
+  content: none !important;
+  background-image: none !important;
+}
+#status-quo .service-pressure-card > * {
+  position: relative;
+  z-index: 2;
+}
+.service-strain-motif {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  overflow: hidden;
+  border-radius: var(--radius);
+}
+.service-strain-motif svg {
+  width: 100%;
+  height: 100%;
+  opacity: .105;
+}
+.service-strain-motif path {
+  fill: none;
+  stroke: var(--brown);
+  vector-effect: non-scaling-stroke;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.service-strain-motif .strain-line {
+  stroke-width: 2;
+  stroke-dasharray: 8 10;
+}
+.service-strain-motif .strain-arrow {
+  stroke-width: 2.4;
+}
+.service-strain-motif .strain-crack {
+  stroke-width: 3;
+}
+
+/* Funding gap: Legal complexity bullets should read as brown, not gold. */
+.legal-complexity-points p::before {
+  background: var(--brown);
+}
+
+/* About hero: exact desktop line composition requested. */
+.inner-hero.about .inner-hero-content {
+  max-width: 1120px;
+}
+.about-hero-title span {
+  display: block;
+  white-space: nowrap;
+}
+
+@media (max-width: 980px) {
+  .service-strain-motif {
+    display: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .about-hero-title span {
+    display: inline;
+    white-space: normal;
+  }
+  .about-hero-title span + span::before {
+    content: " ";
+  }
+}
+
+
+
+/* v32 — remove Status quo background / strain motif entirely. */
+#status-quo .service-strain-motif { display: none !important; }
+#status-quo .service-pressure-card::before {
+  display: none !important;
+  content: none !important;
+  background: none !important;
+}
+#status-quo .service-pressure-card {
+  background: var(--paper);
+}
