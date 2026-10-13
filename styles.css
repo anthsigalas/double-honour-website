@@ -248,14 +248,14 @@ button, input, select, textarea { font: inherit; }
 
 .thanks { min-height: 100vh; display: grid; place-items: center; padding: 40px; background: var(--brown); color: var(--cream); text-align: center; }
 .thanks-card { max-width: 720px; }
-.thanks .brand-mark { margin: 0 auto 30px; color: var(--cream); }
+.thanks .brand-mark { width: min(320px, 100%); margin: 0 auto 30px; color: var(--cream); }
 .thanks h1 { margin: 0 0 16px; font-size: clamp(42px, 6vw, 68px); letter-spacing: -.04em; line-height: 1.05; }
 .thanks p { color: rgba(255,255,255,.72); font-size: 18px; }
 .thanks .button { margin-top: 18px; }
 
 .site-footer { background: var(--brown); color: var(--cream); padding: 56px 0 26px; }
 .footer-top { display: grid; grid-template-columns: 1fr auto; gap: 60px; padding-bottom: 42px; }
-.footer-brand-mark { width: 176px; }
+.footer-brand-mark { width: min(320px, 100%); }
 .footer-brand p { max-width: 360px; color: rgba(255,255,255,.62); font-size: 14px; }
 .footer-links { display: grid; grid-template-columns: repeat(2, auto); gap: 12px 54px; font-size: 14px; }
 .footer-bottom { border-top: 1px solid rgba(197,155,82,.24); padding-top: 24px; display: flex; justify-content: space-between; gap: 20px; color: rgba(255,255,255,.52); font-size: 12px; }
@@ -1410,4 +1410,1424 @@ fieldset.form-question { min-width: 0; }
 }
 #status-quo .service-pressure-card {
   background: var(--paper);
+}
+
+
+/* v34 — 23 Sep 2026 copy, line-break and section-layout refinements */
+.home-journey-intro strong {
+  font-weight: 700;
+}
+
+/* Keep the Our service hero supporting sentence on one line on wide screens. */
+.service-hero .inner-hero-content {
+  max-width: var(--max);
+}
+.service-hero .service-hero-subtitle {
+  max-width: none !important;
+  white-space: nowrap;
+  font-size: clamp(17px, 1.55vw, 21px);
+}
+
+/* Slightly reduce the major statements requested on the Our service page. */
+.service-funding-layout .funding-gap-title {
+  font-size: clamp(32px, 4.05vw, 52px);
+}
+.service-solution-heading .service-solution-title {
+  max-width: 1180px;
+  font-size: clamp(28px, 3.05vw, 40px);
+}
+.service-commitment p {
+  max-width: 1180px;
+  color: var(--ink);
+  font-size: clamp(25px, 2.7vw, 36px);
+  line-height: 1.24;
+}
+
+/* Legal complexity: gold heading and right-aligned copy / bullets. */
+.legal-complexity-copy {
+  text-align: right;
+}
+.legal-complexity-copy h3 {
+  color: var(--gold);
+}
+.legal-complexity-points {
+  margin-left: auto;
+  justify-items: end;
+}
+.legal-complexity-points p {
+  width: min(100%, 900px);
+  padding-left: 0;
+  padding-right: 18px;
+  text-align: right;
+}
+.legal-complexity-points p::before {
+  left: auto;
+  right: 0;
+  background: var(--brown);
+}
+
+/* Restore the normal alternating section rhythm: paper funding gap → white solution. */
+.service-solution-section {
+  background: var(--white);
+  color: var(--ink);
+}
+.service-solution-heading h2 {
+  color: var(--ink);
+}
+.service-solution-section .eyebrow {
+  color: var(--gold);
+}
+.service-support-card {
+  box-shadow: 0 16px 42px rgba(43,26,16,.10);
+}
+
+/* About values statement: one line where the viewport comfortably allows it. */
+.about-values-one-line {
+  white-space: nowrap;
+  font-size: clamp(15px, 1.38vw, 18px) !important;
+}
+
+@media (max-width: 1100px) {
+  .service-hero .service-hero-subtitle,
+  .about-values-one-line {
+    white-space: normal;
+  }
+}
+
+@media (max-width: 720px) {
+  .home-journey-intro br { display: none; }
+  .legal-complexity-copy,
+  .legal-complexity-points p { text-align: left; }
+  .legal-complexity-points { justify-items: start; }
+  .legal-complexity-points p {
+    padding-right: 0;
+    padding-left: 18px;
+  }
+  .legal-complexity-points p::before {
+    right: auto;
+    left: 0;
+  }
+}
+
+
+/* v35 — 23 Sep 2026 Our service line-break and alignment refinements */
+/* Keep user-directed desktop line composition exact while allowing natural wrapping on smaller screens. */
+.service-fixed-line {
+  white-space: nowrap;
+}
+
+/* Hero: exactly two lines at the requested sentence break. */
+.service-hero .service-hero-subtitle {
+  white-space: normal;
+}
+
+/* Funding gap: align the 03 heading/title with the top of the schematic rather than its vertical midpoint/bottom. */
+.service-funding-layout {
+  align-items: start;
+}
+.service-funding-layout .funding-schematic {
+  align-self: start;
+  margin-top: 0;
+}
+
+/* How we can help: widen the statement block and reduce type just enough to preserve the requested two-line layout. */
+.service-solution-heading {
+  max-width: 1180px;
+}
+.service-solution-heading .service-solution-title {
+  max-width: 1180px;
+  font-size: clamp(26px, 2.45vw, 32px);
+  line-height: 1.22;
+}
+
+/* Commitment: preserve the requested three lines without secondary wrapping. */
+.service-commitment p {
+  max-width: 1180px;
+  font-size: clamp(23px, 2.35vw, 31px);
+  line-height: 1.28;
+}
+
+/* CTA: allow the first requested line to use the available column width. */
+.contact-grid .service-contact-copy {
+  max-width: 800px;
+}
+
+@media (max-width: 1100px) {
+  .service-fixed-line {
+    white-space: normal;
+  }
+}
+
+/* v36 — 23 Sep 2026 final Our service commitment typography adjustment */
+/* Restore the statement's intended display size while preserving the exact three desktop lines. */
+.service-commitment p {
+  max-width: none;
+  width: 100%;
+  font-size: clamp(31px, 2.7vw, 36px);
+  line-height: 1.24;
+}
+.service-commitment .service-fixed-line {
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  text-transform: none;
+}
+
+/* v39 — About page: keep the quote in the right column, then let the body copy span full width beneath it. */
+.about-name-layout {
+  display: grid;
+  grid-template-columns: .85fr 1.15fr;
+  gap: 40px 70px;
+  align-items: start;
+}
+
+.about-name-title h2 {
+  margin: 0;
+  font-size: clamp(36px, 4.5vw, 58px);
+  line-height: 1.08;
+  letter-spacing: -.035em;
+}
+
+.about-name-verse {
+  margin: 0;
+  padding: 0 0 0 24px;
+  border-left: 2px solid var(--gold);
+}
+
+.about-name-verse p {
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(22px, 2vw, 28px);
+  line-height: 1.4;
+  letter-spacing: -.015em;
+}
+
+.about-name-verse cite {
+  display: block;
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.about-name-body {
+  grid-column: 1 / -1;
+  gap: 22px;
+  max-width: 1180px;
+}
+
+@media (max-width: 720px) {
+  .about-name-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .about-name-verse {
+    padding-left: 18px;
+  }
+
+  .about-name-body {
+    grid-column: auto;
+  }
+}
+
+
+/* v41 — 23 Sep 2026: all editorial line breaks added in today's desktop refinements are desktop-only.
+   On phone layouts, these breaks are removed so copy reflows naturally to the device width. */
+@media (max-width: 720px) {
+  br.desktop-br {
+    display: none !important;
+  }
+}
+
+
+/* v44 — based strictly on v41 static content layout.
+   Only the persistent top navigation and bottom footer expand with viewport width. */
+:root {
+  --edge-layer-total-gutter: clamp(64px, 8vw, 220px);
+}
+
+/* Persistent, identical coloured navigation bar on every standard page. */
+.site-header,
+.site-header.on-light {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 1000;
+  color: var(--cream);
+  background: var(--brown);
+  border-bottom: 1px solid rgba(255,255,255,.18);
+  box-shadow: 0 2px 14px rgba(43,26,16,.08);
+}
+
+/* Keep the header controls consistent even on pages previously marked on-light. */
+.site-header.on-light .menu-button {
+  border-color: rgba(255,255,255,.5);
+}
+.site-header.on-light .menu-button span {
+  background: var(--cream);
+}
+.site-header.on-light .button-small {
+  color: var(--cream);
+  background: rgba(255,255,255,.14);
+  border-color: rgba(255,255,255,.55);
+}
+.site-header.on-light .button-small:hover {
+  color: var(--brown);
+  background: var(--cream);
+}
+
+/* Header and footer alone use the wider responsive shell. All body content stays v41-static. */
+.site-header .header-inner,
+.site-footer > .shell,
+.thanks-legal-footer > .shell {
+  width: calc(100% - var(--edge-layer-total-gutter));
+  max-width: none;
+  margin-inline: auto;
+}
+
+/* Fixed navigation should not cover anchored sections when jumping within a page. */
+html {
+  scroll-padding-top: 112px;
+}
+
+@media (max-width: 720px) {
+  .site-header .header-inner,
+  .site-footer > .shell,
+  .thanks-legal-footer > .shell {
+    width: calc(100% - 32px);
+  }
+  html {
+    scroll-padding-top: 92px;
+  }
+}
+
+/* v45 — 30 Sep 2026: cream persistent header across all pages.
+   Keeps the v44/v41 static body layout and responsive edge-layer behaviour unchanged. */
+.site-header,
+.site-header.on-light {
+  color: var(--brown);
+  background: var(--cream);
+  border-bottom: 1px solid rgba(43,26,16,.16);
+  box-shadow: 0 2px 14px rgba(43,26,16,.08);
+}
+
+.site-header .desktop-nav a,
+.site-header.on-light .desktop-nav a {
+  color: var(--brown);
+}
+
+.site-header .menu-button,
+.site-header.on-light .menu-button {
+  border-color: rgba(43,26,16,.38);
+}
+.site-header .menu-button span,
+.site-header.on-light .menu-button span {
+  background: var(--brown);
+}
+
+.site-header .button-small,
+.site-header.on-light .button-small {
+  color: var(--brown);
+  background: rgba(255,255,255,.18);
+  border-color: rgba(43,26,16,.38);
+}
+.site-header .button-small:hover,
+.site-header.on-light .button-small:hover {
+  color: var(--cream);
+  background: var(--brown);
+  border-color: var(--brown);
+}
+
+/* v47 — 30 Sep 2026: slimmer very-light-cream persistent header across all pages.
+   Uses the website's existing light cream (#FFFDF9), while keeping the v41 static body layout plus the v44 responsive header/footer width behaviour. */
+.site-header,
+.site-header.on-light {
+  color: var(--brown);
+  background: #FFFDF9;
+  border-bottom: 1px solid rgba(43,26,16,.12);
+  box-shadow: 0 2px 10px rgba(43,26,16,.06);
+}
+
+.site-header .header-inner,
+.site-header.on-light .header-inner {
+  height: 70px;
+}
+
+.site-header .brand-mark,
+.site-header.on-light .brand-mark {
+  width: 150px;
+}
+
+.site-header .desktop-nav a,
+.site-header.on-light .desktop-nav a {
+  color: var(--brown);
+}
+
+.site-header .menu-button,
+.site-header.on-light .menu-button {
+  border-color: rgba(43,26,16,.32);
+}
+.site-header .menu-button span,
+.site-header.on-light .menu-button span {
+  background: var(--brown);
+}
+
+.site-header .button-small,
+.site-header.on-light .button-small {
+  min-height: 38px;
+  color: var(--brown);
+  background: transparent;
+  border-color: rgba(43,26,16,.34);
+}
+.site-header .button-small:hover,
+.site-header.on-light .button-small:hover {
+  color: #FFFFFF;
+  background: var(--brown);
+  border-color: var(--brown);
+}
+
+html {
+  scroll-padding-top: 88px;
+}
+
+@media (max-width: 720px) {
+  .site-header .header-inner,
+  .site-header.on-light .header-inner {
+    height: 64px;
+  }
+
+  .site-header .brand-mark,
+  .site-header.on-light .brand-mark {
+    width: 138px;
+  }
+
+  html {
+    scroll-padding-top: 80px;
+  }
+}
+
+/* v48 — 30 Sep 2026 footer/logo/contact refinements on top of v47. */
+.site-footer {
+  padding: 40px 0 20px;
+}
+.footer-top {
+  padding-bottom: 30px;
+}
+.footer-brand-mark {
+  width: 242px;
+  max-width: 100%;
+  margin: 0 0 12px 0;
+}
+.footer-brand p {
+  max-width: 360px;
+  margin: 0;
+}
+.footer-bottom {
+  padding-top: 18px;
+}
+.footer-notices {
+  margin-top: 16px;
+  padding-top: 16px;
+}
+.footer-notices p {
+  max-width: none;
+  width: 100%;
+}
+
+/* On desktop, the footer navigation mirrors the top navigation's right-edge,
+   typography and horizontal spacing. Mobile footer behaviour stays unchanged. */
+@media (min-width: 981px) {
+  .footer-links {
+    gap: 25px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .footer-links .footer-contact-button {
+    min-height: 38px;
+    padding-inline: 20px;
+    margin-left: 3px;
+  }
+}
+
+@media (max-width: 720px) {
+  .site-footer {
+    padding-top: 34px;
+  }
+  .footer-top {
+    padding-bottom: 26px;
+  }
+  .footer-brand-mark {
+    width: 242px;
+  }
+}
+
+
+/* v49 — 30 Sep 2026: requested home/service typography and spacing refinements. */
+/* Home — Who we support emphasis only; preserve existing card typography. */
+.support-card-body > p:not(.support-card-purpose) strong {
+  color: inherit;
+  font-weight: 700;
+}
+
+/* Home — Flexible funding panel emphasis. */
+.funding-panel p strong {
+  color: inherit;
+  font-weight: 700;
+}
+
+/* Home — journey copy begins level with the Flexible funding heading. */
+.home-journey-intro {
+  margin-top: 42px;
+}
+.home-journey-intro .gold-emphasis {
+  color: var(--gold);
+  font-weight: 700;
+}
+
+/* Tighten the five-step list so all five steps sit comfortably beside the funding panel. */
+.journey-list li {
+  padding: 13px 0;
+}
+.journey-list li:last-child {
+  border-bottom: 0;
+}
+.journey-list span {
+  font-size: 18px;
+  line-height: 1;
+}
+
+@media (max-width: 980px) {
+  .home-journey-intro {
+    margin-top: 0;
+  }
+}
+
+/* v50 — 30 Sep 2026: Home Our service RHS spacing / divider refinement. */
+@media (min-width: 981px) {
+  /* Mirror the 42px top offset at the bottom so step 05 finishes above the
+     bottom edge by the same amount that the journey copy starts below the
+     top of the Flexible funding panel. */
+  #our-service .journey-panel {
+    padding-bottom: 42px;
+  }
+
+  /* Keep the step dividers to the same visual width as the journey intro. */
+  #our-service .journey-list {
+    width: 100%;
+    max-width: 590px;
+  }
+}
+
+
+/* v51 — 30 Sep 2026: Home Our service step compression and precise divider width. */
+@media (min-width: 981px) {
+  /* Steps 01 and 02 are single-line items, so give them less vertical space. */
+  #our-service .journey-list li:nth-child(1),
+  #our-service .journey-list li:nth-child(2) {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+  /* Keep the multi-line steps compact while preserving comfortable readability. */
+  #our-service .journey-list li:nth-child(n+3) {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  /* Let the grid's existing stretch behaviour pull the brown panel up as the
+     journey column becomes shorter. Dividers are drawn only as far as the
+     final word "journey:" above, measured after fonts load. */
+  #our-service .journey-list {
+    width: 100%;
+    max-width: none;
+  }
+  #our-service .journey-list li {
+    position: relative;
+    border-bottom: 0;
+  }
+  #our-service .journey-list li:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: min(var(--journey-rule-width, 520px), 100%);
+    border-bottom: 1px solid var(--line);
+  }
+}
+
+/* v52 — 30 Sep 2026: Our service Status quo / Challenge / Funding gap refinements. */
+/* Requested emphasis retains the surrounding typography and colour. */
+#status-quo strong,
+#challenge strong,
+#funding-gap strong {
+  color: inherit;
+  font-weight: 700;
+}
+
+/* Restore the funding-gap statement to the same display size as the other main section headings. */
+.service-funding-layout .funding-gap-title {
+  font-size: clamp(36px, 4.6vw, 62px);
+}
+
+/* Make the Legal complexity heading more prominent. */
+.legal-complexity-copy h3 {
+  font-size: 34px;
+  line-height: 1.18;
+}
+
+/* Keep the legal-complexity copy right-anchored on desktop, but place each gold bullet
+   at the beginning of its own sentence rather than after the sentence. */
+@media (min-width: 721px) {
+  .legal-complexity-points {
+    justify-items: end;
+  }
+  .legal-complexity-points p {
+    width: fit-content;
+    max-width: 900px;
+    padding-right: 0;
+    padding-left: 18px;
+    text-align: left;
+  }
+  .legal-complexity-points p::before {
+    left: 0;
+    right: auto;
+    background: var(--gold);
+  }
+}
+
+@media (max-width: 720px) {
+  .legal-complexity-points p::before {
+    background: var(--gold);
+  }
+}
+
+
+/* v53 — 1 Oct 2026: Our service copy, hierarchy and spacing refinements. */
+/* Funding-gap title: restore the earlier display proportion shown in the approved reference,
+   while retaining the updated wording without “alone”. */
+@media (min-width: 981px) {
+  .service-funding-layout .funding-gap-title {
+    max-width: 520px;
+    font-size: clamp(36px, 4.7vw, 60px);
+    line-height: 1.08;
+    letter-spacing: -.035em;
+  }
+}
+
+/* Bring Legal complexity closer to the funding schematic above. */
+.legal-complexity-panel {
+  margin-top: 16px;
+}
+
+/* 04 — How we can help: use the standard site headline scale. */
+.service-solution-heading .service-solution-title {
+  max-width: 1180px;
+  font-size: clamp(36px, 4.6vw, 62px);
+  line-height: 1.08;
+  letter-spacing: -.035em;
+  font-weight: 600;
+}
+
+/* Requested emphasis inside both support cards, without changing surrounding styling. */
+.service-support-card strong {
+  color: inherit;
+  font-weight: 700;
+}
+
+/* Keep the recommendation statement inside the same width as the two cards above,
+   and retain its pre-change display size. */
+.service-commitment {
+  width: 100%;
+  max-width: 100%;
+}
+.service-commitment p {
+  width: 100%;
+  max-width: 100%;
+  font-size: clamp(31px, 2.7vw, 36px);
+  line-height: 1.24;
+}
+.service-commitment .service-fixed-line {
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  text-transform: none;
+}
+
+/* Preserve the requested desktop CTA line composition; mobile continues to reflow naturally. */
+.contact-section .service-contact-copy {
+  max-width: 800px;
+}
+
+/* v53 correction: the new recommendation line keeps the previous 04 headline size,
+   as requested, even though the 04 headline itself now uses the standard site headline scale. */
+.service-commitment p {
+  font-size: clamp(26px, 2.45vw, 32px);
+  line-height: 1.22;
+}
+
+
+/* v54 — 1 Oct 2026: Funding-gap composition and How we can help heading alignment. */
+@media (min-width: 981px) {
+  /* Match the right-hand funding schematic to the full height of the left statement. */
+  .service-funding-layout {
+    align-items: stretch;
+  }
+  .service-funding-layout .funding-schematic {
+    height: 100%;
+    align-self: stretch;
+  }
+
+  /* Preserve the user's exact desktop line composition for the funding-gap statement. */
+  .service-funding-layout .funding-gap-title {
+    max-width: 520px;
+  }
+}
+
+/* 04 — How we can help: use exactly the same headline typography as the Challenge heading. */
+.service-solution-heading .service-solution-title {
+  margin: 0;
+  font-size: clamp(36px, 4.6vw, 62px);
+  line-height: 1.08;
+  letter-spacing: -.035em;
+  font-weight: 700;
+}
+
+/* Right-align the recommendation statement while preserving its requested line break. */
+.service-commitment p {
+  text-align: right;
+}
+
+@media (max-width: 980px) {
+  .service-commitment p {
+    text-align: left;
+  }
+}
+
+/* v55 — 1 Oct 2026: small spacing/colour refinements. */
+/* Add a little more breathing room above + Legal complexity without changing the section itself. */
+.legal-complexity-panel {
+  margin-top: 32px;
+}
+
+/* Recommendation line in brand gold. */
+.service-commitment p,
+.service-commitment .service-fixed-line {
+  color: var(--gold);
+}
+
+
+/* v56 — 1 Oct 2026: About / FAQ / Contact editorial and visual refinements. */
+/* Our name: keep the shorter title on one line at the established size. */
+.about-name-title h2 {
+  white-space: nowrap;
+}
+
+/* Scripture treatment inspired by the supplied quotation reference: warm gold serif italic,
+   oversized pale quotation marks, and a slight left shift so it sits comfortably in the RHS column. */
+.about-name-verse {
+  position: relative;
+  justify-self: start;
+  width: min(100%, 610px);
+  margin-left: -20px;
+  padding: 24px 34px 22px 48px;
+  border-left: 0;
+  color: var(--gold);
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+}
+.about-name-verse::before,
+.about-name-verse::after {
+  position: absolute;
+  color: rgba(197,155,82,.24);
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: normal;
+  font-weight: 700;
+  line-height: .8;
+  pointer-events: none;
+}
+.about-name-verse::before {
+  content: "“";
+  top: 2px;
+  left: 0;
+  font-size: 92px;
+}
+.about-name-verse::after {
+  content: "”";
+  right: 0;
+  bottom: -12px;
+  font-size: 92px;
+}
+.about-name-verse p {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: var(--gold);
+  font-family: inherit;
+  font-style: italic;
+  font-size: clamp(23px, 2.1vw, 30px);
+  line-height: 1.45;
+  letter-spacing: -.01em;
+}
+.about-name-verse strong {
+  color: inherit;
+  font-weight: 700;
+  font-style: italic;
+}
+.about-name-body {
+  gap: 28px;
+}
+.about-name-body p strong {
+  color: var(--ink);
+}
+
+/* Preserve deliberate desktop editorial line breaks while allowing mobile to reflow naturally. */
+@media (max-width: 720px) {
+  .about-name-title h2 { white-space: normal; }
+  .about-name-verse {
+    width: 100%;
+    margin-left: 0;
+    padding: 22px 28px 22px 38px;
+  }
+  .about-name-verse::before,
+  .about-name-verse::after { font-size: 68px; }
+  .value-card { min-height: 0; }
+}
+
+/* Keep the requested FAQ intro as exactly two desktop lines at the editorial break. */
+.faq-hero p:last-child {
+  max-width: 1180px;
+}
+
+
+/* v57 — 1 Oct 2026: restore the original About / Our name quote treatment.
+   Keep the established vertical gold rule and layout, with the requested gold italic copy,
+   editorial line breaks, inline quotation marks and bold emphasis. */
+.about-name-verse {
+  position: relative;
+  justify-self: start;
+  width: 100%;
+  max-width: 610px;
+  margin: 0 0 0 -8px;
+  padding: 0 0 0 24px;
+  border-left: 2px solid var(--gold);
+  color: var(--gold);
+  font-family: inherit;
+  font-style: italic;
+}
+.about-name-verse::before,
+.about-name-verse::after {
+  content: none;
+  display: none;
+}
+.about-name-verse p {
+  margin: 0;
+  color: var(--gold);
+  font-family: inherit;
+  font-style: italic;
+  font-size: clamp(22px, 2vw, 28px);
+  line-height: 1.4;
+  letter-spacing: -.015em;
+}
+.about-name-verse strong {
+  color: inherit;
+  font-weight: 700;
+  font-style: italic;
+}
+@media (max-width: 720px) {
+  .about-name-verse {
+    width: 100%;
+    max-width: none;
+    margin-left: 0;
+    padding: 0 0 0 18px;
+  }
+}
+
+
+/* v58 — 1 Oct 2026: About / Our name quote correction.
+   Keep the original vertical gold rule, restore the oversized pale quotation marks,
+   preserve the requested gold italic verse, and return the scripture reference to
+   the smaller citation styling used before the v56/v57 quote changes. */
+.about-name-verse {
+  position: relative;
+  justify-self: start;
+  width: min(100%, 610px);
+  max-width: 610px;
+  margin: 0 0 0 -8px;
+  padding: 22px 34px 20px 48px;
+  border-left: 2px solid var(--gold);
+  color: var(--gold);
+  font-family: inherit;
+  font-style: italic;
+}
+.about-name-verse::before,
+.about-name-verse::after {
+  display: block;
+  position: absolute;
+  color: rgba(197,155,82,.24);
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: normal;
+  font-weight: 700;
+  line-height: .8;
+  pointer-events: none;
+}
+.about-name-verse::before {
+  content: "“";
+  top: 4px;
+  left: 12px;
+  font-size: 84px;
+}
+.about-name-verse::after {
+  content: "”";
+  right: 6px;
+  bottom: 14px;
+  font-size: 84px;
+}
+.about-name-verse p {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: var(--gold);
+  font-family: inherit;
+  font-style: italic;
+  font-size: clamp(22px, 2vw, 28px);
+  line-height: 1.4;
+  letter-spacing: -.015em;
+}
+.about-name-verse p strong {
+  color: inherit;
+  font-weight: 700;
+  font-style: italic;
+}
+.about-name-verse cite {
+  position: relative;
+  z-index: 1;
+  display: block;
+  margin-top: 10px;
+  color: var(--gold);
+  font-family: inherit;
+  font-size: 15px;
+  line-height: 1.35;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+@media (max-width: 720px) {
+  .about-name-verse {
+    width: 100%;
+    max-width: none;
+    margin-left: 0;
+    padding: 20px 26px 18px 38px;
+  }
+  .about-name-verse::before,
+  .about-name-verse::after {
+    font-size: 66px;
+  }
+  .about-name-verse::before { left: 8px; }
+  .about-name-verse::after { right: 2px; bottom: 12px; }
+}
+
+/* v59 — 1 Oct 2026: About / Our name quote line-fit refinement.
+   Keep the established quote treatment, but give the verse slightly more usable width
+   and reduce the type very slightly so “especially those” stays together on the second line. */
+@media (min-width: 721px) {
+  .about-name-verse {
+    width: min(100%, 650px);
+    max-width: 650px;
+    margin-left: -28px;
+    padding-right: 24px;
+  }
+  .about-name-verse p {
+    font-size: clamp(21px, 1.9vw, 27px);
+  }
+}
+
+
+/* v60 — About / Our name: reference quote and church composition. */
+#our-name {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.about-name-layout {
+  position: relative;
+  z-index: 1;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  grid-template-areas: "title verse" "body verse";
+  gap: 30px 76px;
+}
+.about-name-title { grid-area: title; }
+.about-name-body {
+  grid-area: body;
+  max-width: none;
+  gap: 28px;
+}
+.about-name-body p { color: var(--ink); }
+.about-name-church {
+  position: absolute;
+  z-index: 0;
+  right: 0;
+  bottom: 0;
+  width: min(68%, 1040px);
+  max-width: none;
+  height: auto;
+  pointer-events: none;
+}
+.about-name-verse {
+  grid-area: verse;
+  position: relative;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 18px 0 0 22px;
+  border: 0;
+  font-family: inherit;
+  color: #87502D;
+}
+.about-name-verse::before {
+  content: "“";
+  display: block;
+  position: absolute;
+  top: -20px;
+  left: -14px;
+  color: var(--cream);
+  font-family: inherit;
+  font-size: 108px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1;
+}
+.about-name-verse::after { content: none; display: none; }
+.about-name-verse p {
+  color: inherit;
+  font-family: inherit;
+  font-size: clamp(24px, 2.1vw, 29px);
+  line-height: 1.42;
+  letter-spacing: -.015em;
+  font-style: italic;
+  font-weight: 400;
+}
+.about-name-verse p strong { color: inherit; font-weight: 700; }
+.about-verse-ending { white-space: nowrap; }
+.about-name-verse .about-quote-close {
+  display: inline-block;
+  color: var(--cream);
+  font-family: inherit;
+  font-size: 108px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 0;
+  vertical-align: -.42em;
+  margin-left: 5px;
+}
+.about-name-verse cite {
+  margin-top: 24px;
+  color: inherit;
+  font-family: inherit;
+  font-size: 15px;
+  line-height: 1.4;
+  font-weight: 500;
+  font-style: normal;
+}
+@media (min-width: 721px) and (max-width: 1000px) {
+  .about-name-layout {
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+    column-gap: 40px;
+  }
+  .about-name-title h2 { font-size: 40px; }
+  .about-name-verse p { font-size: 23px; }
+  .about-name-church { width: 62%; }
+}
+@media (max-width: 720px) {
+  .about-name-layout {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "title" "verse" "body";
+    gap: 32px;
+  }
+  #our-name { padding-bottom: 0; }
+  .about-name-verse { margin: 0; padding: 16px 12px 0 26px; }
+  .about-name-verse p { font-size: clamp(21px, 5.7vw, 26px); }
+  .about-name-verse::before { top: -14px; left: 0; font-size: 88px; }
+  .about-name-verse .about-quote-close { font-size: 88px; }
+  .about-name-verse cite { margin-top: 22px; font-size: 14px; }
+  .about-name-body { gap: 24px; }
+  .about-name-church {
+    position: relative;
+    width: 100%;
+    margin-top: 64px;
+  }
+  #our-name { display: flex; flex-direction: column; }
+  #our-name .about-name-layout { order: 0; }
+  #our-name .about-name-church { order: 1; }
+}
+
+
+/* v61 — quote offset and restored body colour. */
+@media (min-width: 721px) {
+  .about-name-verse { transform: translateY(28px); }
+}
+.about-name-body p { color: var(--muted); }
+.value-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 285px;
+}
+.value-card > * {
+  position: relative;
+  z-index: 1;
+}
+@media (max-width: 980px) {
+  .value-card { min-height: 250px; }
+}
+
+/* v63 — supplied tightly packed DH pattern, faint behind the card text. */
+.value-card::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  border-radius: inherit;
+  background-image: url("assets/dh-pattern.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  opacity: .04;
+  pointer-events: none;
+}
+
+
+/* v64 — smaller right-aligned church image and wider Our name copy. */
+@media (min-width: 1001px) {
+  .about-name-layout {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    column-gap: 64px;
+  }
+  .about-name-church { width: min(54%, 830px); }
+}
+@media (min-width: 721px) and (max-width: 1000px) {
+  .about-name-layout {
+    grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr);
+    column-gap: 32px;
+  }
+  .about-name-church { width: 52%; }
+}
+@media (max-width: 720px) {
+  .about-name-church { width: 88%; margin-left: auto; }
+}
+
+
+/* v65 — requested line composition and a more compact Our name section. */
+@media (min-width: 1001px) {
+  .about-name-layout { grid-template-columns: minmax(0, 2fr) minmax(360px, 1fr); }
+  .about-name-verse p { font-size: clamp(23px, 1.8vw, 25px); }
+}
+@media (min-width: 721px) {
+  .about-name-practical { white-space: nowrap; }
+  #our-name { padding-bottom: 48px; }
+  .about-name-church { bottom: 16px; }
+}
+@media (min-width: 721px) and (max-width: 1000px) {
+  .about-name-verse p { font-size: 22px; }
+  .about-verse-ending { white-space: normal; }
+}
+@media (max-width: 720px) {
+  .about-verse-ending { white-space: normal; }
+}
+
+
+/* v67 — exact five-line desktop quotation. */
+.about-name-verse .about-quote-line { display: block; }
+@media (min-width: 1001px) {
+  .about-name-verse .about-quote-line { white-space: nowrap; }
+}
+@media (max-width: 1000px) {
+  .about-name-verse .about-quote-line { white-space: normal; }
+}
+
+
+/* v69 — keep the full closing phrase together and raise the church image. */
+@media (min-width: 721px) {
+  #our-name { padding-bottom: 88px; }
+  .about-name-church { bottom: 0; }
+}
+@media (min-width: 721px) and (max-width: 1000px) {
+  .about-name-practical { white-space: normal; }
+}
+
+
+/* v70 — exact three-line desktop paragraph, at the existing body type size. */
+.about-name-body { grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 1001px) {
+  .about-name-body .about-name-three-lines {
+    width: max-content;
+    max-width: none;
+  }
+  .about-name-three-lines .about-name-body-line {
+    display: block;
+    white-space: nowrap;
+  }
+}
+
+
+/* v72 — original team layout, split names, and slightly lower identity text. */
+#team .team-name-line {
+  display: block;
+  white-space: nowrap;
+}
+#team .team-intro {
+  transform: translateY(10px);
+}
+
+/* v75 — mobile spacing, natural text wrapping and readable funding notes.
+   Hidden spacer spans preserve every desktop line break and word position. */
+.mobile-word-space { display: none; }
+@media (max-width: 720px) {
+  .mobile-word-space { display: inline; }
+
+  main,
+  .site-footer { overflow-wrap: anywhere; }
+  main > section,
+  main .shell,
+  .shell > *,
+  .contact-grid > *,
+  .footer-top > *,
+  .about-grid > *,
+  .help-grid > *,
+  .funding-gap-layout > *,
+  .faq-layout > *,
+  .form-row > *,
+  .team-card-header > * { min-width: 0; }
+
+  .service-fixed-line,
+  .about-values-one-line,
+  .about-name-practical,
+  .about-name-body-line,
+  .about-hero-title span { white-space: normal; }
+  .about-name-verse .about-quote-line {
+    display: inline;
+    white-space: normal;
+  }
+
+  #our-name { padding-bottom: 64px; }
+  #our-name .about-name-church { display: none; }
+
+  .legal-complexity-copy h3 {
+    font-size: clamp(26px, 2.45vw, 32px);
+    line-height: 1.22;
+  }
+  .source-detail {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+  .source-segment { padding-inline: 12px; }
+
+  #team .team-card-header {
+    grid-template-columns: clamp(92px, 28vw, 116px) minmax(0, 1fr);
+    gap: clamp(12px, 4vw, 16px);
+  }
+  #team .team-photo {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 116 / 146;
+  }
+  #team .team-name-line { white-space: normal; }
+}
+
+/* v76 — 13 Oct 2026: mobile-only typography alignment and funding-gap redesign. */
+.mobile-source-stack { display: none; }
+
+@media (max-width: 720px) {
+  /* Use one consistent body-copy scale across About us and the mobile service page. */
+  #our-name .about-name-body p,
+  #mission .about-copy p,
+  #values .about-wide-heading p:not(.eyebrow),
+  #values .value-card p,
+  #team .about-wide-heading p:not(.eyebrow),
+  #funding-gap .source-detail,
+  #funding-gap .mobile-source-card li,
+  #funding-gap .legal-complexity-points p {
+    font-size: 16px !important;
+    line-height: 1.65;
+  }
+
+  /* Mobile funding gap: each explanation now sits directly with the source it explains. */
+  #funding-gap .funding-schematic {
+    padding: 24px;
+  }
+  #funding-gap .scheme-sources,
+  #funding-gap .source-detail-grid {
+    display: none;
+  }
+  #funding-gap .mobile-source-stack {
+    display: grid;
+    gap: 14px;
+    margin-top: 22px;
+  }
+  #funding-gap .mobile-source-stack::before {
+    content: "SOURCES";
+    display: block;
+    margin-bottom: -2px;
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: .14em;
+  }
+  #funding-gap .mobile-source-card {
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--white);
+  }
+  #funding-gap .mobile-source-card h3 {
+    margin: 0;
+    padding: 16px 18px;
+    font-size: 16px;
+    line-height: 1.3;
+    font-weight: 700;
+  }
+  #funding-gap .mobile-source-card ul {
+    margin: 0;
+    padding: 16px 20px 18px 36px;
+  }
+  #funding-gap .mobile-source-card li + li {
+    margin-top: 10px;
+  }
+  #funding-gap .mobile-source-savings h3 {
+    background: #F0E5D4;
+    color: var(--brown);
+  }
+  #funding-gap .mobile-source-bank h3 {
+    background: #D7C3A4;
+    color: var(--brown);
+  }
+  #funding-gap .mobile-source-gap h3 {
+    background: var(--brown);
+    color: var(--cream);
+  }
+}
+
+
+/* v77 — verified mobile type hierarchy and accessible funding-source label.
+   Changes in this block apply ONLY at mobile widths; desktop styles are unchanged. */
+@media (max-width: 720px) {
+  /* Page hero headings — one scale on Home, About, Our service, FAQ and Contact. */
+  .hero h1,
+  .inner-hero h1,
+  .service-hero h1,
+  .faq-hero h1,
+  .contact-intro h1,
+  .legal-page h1,
+  .thanks h1 {
+    font-size: 40px;
+    line-height: 1.09;
+  }
+
+  /* Main section headings — same scale, including FAQ sections and footer CTAs. */
+  .section-heading h2,
+  #our-name .about-name-title h2,
+  #mission .about-grid h2,
+  #funding-gap .funding-gap-title,
+  .service-solution-heading .service-solution-title,
+  .contact-section h2,
+  .faq-group h2 {
+    font-size: 34px;
+    line-height: 1.12;
+    letter-spacing: -.035em;
+  }
+
+  /* Subsections / groups (between section headers and card titles). */
+  #team .team-group-heading h3,
+  #funding-gap .legal-complexity-copy h3 {
+    font-size: 26px;
+    line-height: 1.22;
+  }
+
+  /* Card headings across the site, including the previously undersized funding cards. */
+  .support-card h3,
+  .funding-panel h3,
+  .service-pressure-card h3,
+  .service-challenge-content h2,
+  .service-support-card h3,
+  .service-support-card .client-type-title,
+  #values .value-card h3,
+  #funding-gap .mobile-source-card h3 {
+    font-size: 24px;
+    line-height: 1.25;
+  }
+
+  /* Ordinary supporting paragraphs and list copy use the same 16px scale.
+     Scripture quotes, metrics, navigation labels, testimonials and display
+     statements retain their intentional emphasis. */
+  .support-card-body > p:not(.support-card-purpose),
+  .funding-panel p:not(.card-kicker),
+  .journey-list p,
+  .impact-copy p,
+  #team .team-bullets li,
+  .service-challenge-content li,
+  .faq-hero > .shell > p:not(.eyebrow),
+  .contact-intro > p:not(.eyebrow),
+  .contact-grid p:not(.eyebrow),
+  .service-hero .service-hero-subtitle {
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  /* Funding diagram: Sources is now actual visible text, not pseudo-content. */
+  #funding-gap .mobile-source-stack::before {
+    content: none;
+    display: none;
+  }
+  #funding-gap .mobile-sources-label {
+    margin: 0 0 -2px;
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: .14em;
+  }
+}
+
+
+/* v78 — Mobile funding breakdown: equal-sized labels and numbered composition.
+   The two funding sources plus the remaining gap together account for the
+   property's value. Keep the original desktop schematic entirely unchanged. */
+@media (max-width: 720px) {
+  #funding-gap .mobile-source-stack {
+    gap: 12px;
+  }
+
+  /* Match 'Property value' (16px), rather than the site's 24px card-title scale. */
+  #funding-gap .mobile-source-card h3 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 18px;
+    font-size: 16px;
+    line-height: 1.3;
+    font-weight: 700;
+    letter-spacing: normal;
+  }
+
+  #funding-gap .mobile-source-card .source-step {
+    flex: 0 0 30px;
+    display: grid;
+    width: 30px;
+    height: 30px;
+    place-items: center;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+    font-size: 11px;
+    line-height: 1;
+    letter-spacing: .02em;
+    opacity: .74;
+  }
+
+  #funding-gap .mobile-source-gap .source-step {
+    color: var(--gold);
+    opacity: 1;
+  }
 }
