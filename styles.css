@@ -2831,3 +2831,19 @@ html {
     opacity: 1;
   }
 }
+
+.form-submit-error:not([hidden]) {
+  margin: 0 0 18px;
+  padding: 13px 16px;
+  border: 1px solid #AD594B;
+  border-radius: 12px;
+  background: #FFF4EF;
+  color: var(--brown);
+  font-size: 13px;
+  line-height: 1.6;
+}
+.form-submit-error a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-weight: 700;
+}
