@@ -51,3 +51,10 @@ if (document.fonts?.ready) {
   setHomeJourneyRuleWidth();
 }
 window.addEventListener('resize', setHomeJourneyRuleWidth);
+
+// Formspark returns failed submissions to the Contact page with ?submission=error.
+// Show a clear error instead of implying the enquiry was received.
+const formSubmissionError = document.getElementById('form-submit-error');
+if (formSubmissionError && new URLSearchParams(window.location.search).get('submission') === 'error') {
+  formSubmissionError.hidden = false;
+}
